@@ -9,18 +9,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="container">
             <Link className="navbar-brand" to="/">
               Shopping Cart
             </Link>
 
             <div className="navbar-nav">
-              <Link className="nav-link" to="/">
+              <Link  className="nav-link text-white" to="/">
                 Products
               </Link>
 
-              <Link className="nav-link" to="/cart">
+              <Link className="nav-link text-white" to="/cart">
                 Cart
               </Link>
             </div>

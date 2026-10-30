@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { productResponseSchema, type Product, } from '../schemas/productSchema'
+import { productResponseSchema} from '../schemas/productSchema'
 import { useCartStore } from '../store/cartStore'
 import { useProductFilters } from '../hooks/useProductFilters'
 
@@ -18,10 +18,6 @@ const Products = () => {
 
     const addToCart = useCartStore((state) => state.addToCart)
     const cart = useCartStore((state) => state.cart)
-    const cartCount = cart.reduce(
-        (total, item) => total + item.quantity,
-        0
-    )
     const {
         search,
         setSearch,
