@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { productResponseSchema} from '../schemas/productSchema'
+import { productResponseSchema } from '../schemas/productSchema'
 import { useCartStore } from '../store/cartStore'
 import { useProductFilters } from '../hooks/useProductFilters'
 
@@ -17,7 +17,6 @@ const Products = () => {
     })
 
     const addToCart = useCartStore((state) => state.addToCart)
-    const cart = useCartStore((state) => state.cart)
     const {
         search,
         setSearch,
@@ -33,9 +32,11 @@ const Products = () => {
         return <p className="text-center mt-5">Loading products...</p>
     }
     if (isError) {
-        <p className="text-center mt-5 text-danger">
-            Failed to load or validate products.
-        </p>
+        return (
+            <p className="text-center mt-5 text-danger">
+                Failed to load or validate products.
+            </p>
+        )
     }
     if (!data) {
         return <p>No products available.</p>
